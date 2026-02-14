@@ -1,0 +1,175 @@
+:root {
+    --bb-pink: #ff66b7;
+    --bb-light-pink: #ff8fcb;
+    --bb-rose-white: #fff0f7;
+    --bb-dark: #333333;
+    --bb-shadow: 0 15px 30px rgba(255, 102, 183, 0.25);
+}
+
+body {
+    font-family: "Poppins", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bb-rose-white);
+    color: var(--bb-dark);
+}
+
+.navbar {
+    background: linear-gradient(90deg, var(--bb-pink), var(--bb-light-pink));
+    box-shadow: var(--bb-shadow);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff !important;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+.hero-section {
+    background: linear-gradient(120deg, var(--bb-pink), var(--bb-light-pink));
+    border-radius: 32px;
+    padding: 4rem 3rem;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--bb-shadow);
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    inset: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    pointer-events: none;
+}
+
+.hero-cta {
+    background: #fff;
+    color: var(--bb-pink);
+    border: none;
+    border-radius: 999px;
+    padding: 0.9rem 2.5rem;
+    font-weight: 600;
+    box-shadow: var(--bb-shadow);
+}
+
+.section-title {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.category-pill {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: var(--bb-shadow);
+    transition: transform 0.2s ease;
+}
+
+.category-pill:hover {
+    transform: translateY(-5px);
+}
+
+.product-card {
+    border: none;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: var(--bb-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px rgba(255, 102, 183, 0.35);
+}
+
+.product-card img {
+    border-radius: 18px;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bb-pink);
+}
+
+.btn-bb, .btn-outline-bb {
+    border-radius: 999px;
+    padding: 0.65rem 1.75rem;
+    font-weight: 600;
+}
+
+.btn-bb {
+    background: linear-gradient(90deg, var(--bb-pink), var(--bb-light-pink));
+    border: none;
+    color: #fff;
+    box-shadow: var(--bb-shadow);
+}
+
+.btn-bb:hover {
+    color: #fff;
+    opacity: 0.92;
+}
+
+.btn-outline-bb {
+    border: 2px solid var(--bb-pink);
+    color: var(--bb-pink);
+    background: transparent;
+}
+
+.btn-outline-bb:hover {
+    background: var(--bb-pink);
+    color: #fff;
+}
+
+.cart-card,
+.checkout-step,
+.admin-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: var(--bb-shadow);
+}
+
+.checkout-step + .checkout-step {
+    margin-top: 1.5rem;
+}
+
+.footer {
+    background: #fff;
+    border-top: none;
+}
+
+.footer .social-link {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--bb-pink);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        padding: 2.5rem 1.75rem;
+    }
+
+    .category-pill,
+    .product-card {
+        margin-bottom: 1rem;
+    }
+}

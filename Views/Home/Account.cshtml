@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "My Account - BeautyBazaar";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-uppercase fw-bold text-center" style="color: var(--neon-pink);">MY ACCOUNT</h1>
+
+            <div class="cyber-card p-4 mt-4">
+                <div class="text-center mb-4">
+                    <i class="bi bi-person-circle display-1" style="color: var(--hot-pink);"></i>
+                    <h4 class="text-light mt-3">Welcome to BeautyBazaar</h4>
+                    <p class="text-muted">Manage your account and preferences</p>
+                </div>
+
+                <div class="d-grid gap-3">
+                    <a href="#" class="btn btn-cyber-outline">
+                        <i class="bi bi-box-seam me-2"></i> Order History
+                    </a>
+                    <a href="#" class="btn btn-cyber-outline">
+                        <i class="bi bi-heart me-2"></i> Wishlist
+                    </a>
+                    <a href="#" class="btn btn-cyber-outline">
+                        <i class="bi bi-gear me-2"></i> Account Settings
+                    </a>
+                    <a href="#" class="btn btn-cyber-outline">
+                        <i class="bi bi-shield-lock me-2"></i> Privacy & Security
+                    </a>
+                </div>
+
+                <div class="text-center mt-4">
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,64 @@
+﻿@model List<BeautyBazaar.Models.Product>
+@{
+    ViewData["Title"] = "All Products - BeautyBazaar";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1>Our Products</h1>
+
+            <!-- Search Bar -->
+            <form method="post" action="@Url.Action("Search", "Products")" class="mb-5">
+                <div class="input-group">
+                    <input type="text" name="searchTerm" class="form-control cyber-search" placeholder="SEARCH FOR CYBER GLAM..." value="@ViewBag.SearchTerm">
+                    <button type="submit" class="btn btn-cyber">SEARCH</button>
+                </div>
+            </form>
+
+            @if (Model.Any())
+            {
+                <div class="row">
+                    @foreach (var product in Model)
+                    {
+                        <div class="col-md-4 col-lg-3 mb-4">
+                            <div class="card h-100 cyber-card">
+                                <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" style="height: 200px; object-fit: cover; border-bottom: 1px solid var(--hot-pink);">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">@product.Name</h5>
+                                    <p class="card-text text-muted small">@product.Brand</p>
+                                    <p class="card-text flex-grow-1 text-light small">@product.Description</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="product-price">@product.Price.ToString("N2") DH</span>
+                                            <span class="badge badge-cyber">IN STOCK</span>
+                                        </div>
+                                        <a href="@Url.Action("Details", "Products", new { id = product.Id })" class="btn btn-cyber-outline w-100 mt-2">VIEW DETAILS</a>
+                                        <form asp-controller="Cart" asp-action="AddToCart" method="post" class="mt-2">
+                                            <input type="hidden" name="productId" value="@product.Id" />
+                                            <button type="submit" class="btn btn-cyber w-100">
+                                                <i class="bi bi-cart-plus me-1"></i>ADD TO CART
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-5">
+                    <i class="bi bi-search display-1 text-muted"></i>
+                    <h3 class="mt-3">No products found</h3>
+                    <p class="text-muted">@(ViewBag.SearchTerm != null ? "No products match your search criteria." : "No products available at the moment.")</p>
+                    @if (ViewBag.SearchTerm != null)
+                    {
+                        <a href="@Url.Action("Index")" class="btn btn-primary">View All Products</a>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
